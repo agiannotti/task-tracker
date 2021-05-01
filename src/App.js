@@ -1,5 +1,11 @@
+import Header from "./Components/Header";
+
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <div className="container">
+      <Header title="no yolo" />
+    </div>
+  );
 }
 
 export default App;
