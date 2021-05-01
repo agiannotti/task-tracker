@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
+import Button from "./Button";
 
-const Header = ({ title }) => {
+const Header = () => {
   return (
-    <header>
-      <h1 style={headerStyle}>Task Tracker</h1>
-      <h4>{title}</h4>
+    <header className="header">
+      <h1>Task Tracker</h1>
+      <Button color="blue" text="Hello" />
     </header>
   );
 };
@@ -20,8 +21,8 @@ Header.propTypes = {
 };
 
 const headerStyle = {
-  color: "grey",
-  backgroundColor: "#424242",
+  //   color: "grey",
+  //   backgroundColor: "#424242",
 };
 
 export default Header;
