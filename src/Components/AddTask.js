@@ -23,7 +23,7 @@ const AddTask = ({ onAdd }) => {
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
-        <label>task</label>
+        <label>Task</label>
         <input
           type="text"
           placeholder="Add Task"
@@ -32,7 +32,7 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
       <div className="form-control">
-        <label>Day and time</label>
+        <label>Day and Time</label>
         <input
           type="text"
           placeholder="Add Day"

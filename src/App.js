@@ -4,7 +4,8 @@ import Header from "./Components/Header";
 import Tasks from "./Components/Tasks";
 import AddTask from "./Components/AddTask";
 
-function App() {
+const App = () => {
+  const [showAddTask, setShowAddTask] = useState(true);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -28,7 +29,8 @@ function App() {
 
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 10000) + 1;
-    console.log(id);
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
   };
 
   const deleteTask = (id) => {
@@ -46,8 +48,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd={addTask} />
+      <Header
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
@@ -55,6 +60,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;
